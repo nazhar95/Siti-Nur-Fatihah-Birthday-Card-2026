@@ -1,0 +1,242 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body{
+    background:linear-gradient(135deg,#EAF7EA,#F8FFF8,#D7F5D7);
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-family:"Segoe UI",sans-serif;
+    overflow:hidden;
+}
+
+.scene{
+    perspective:1800px;
+}
+
+.card{
+    width:360px;
+    height:540px;
+    position:relative;
+    transform-style:preserve-3d;
+}
+
+.cover,
+.inside{
+    position:absolute;
+    width:100%;
+    height:100%;
+    border-radius:18px;
+    box-shadow:0 20px 45px rgba(0,0,0,.20);
+    overflow:hidden;
+}
+
+.inside{
+    background:white;
+    padding:35px;
+}
+
+.cover{
+
+    transform-origin:left;
+    transition:1s;
+    z-index:10;
+
+    cursor:pointer;
+
+    background:
+    linear-gradient(145deg,#b4e5b2);
+
+    color:white;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+}
+
+.card.open .cover{
+
+    transform:rotateY(-165deg);
+}
+
+.cover h1{
+
+    font-size:32px;
+    margin-bottom:15px;
+}
+
+.cover h2{
+
+    font-size:20px;
+    font-weight:400;
+    line-height:1.5;
+    width:85%;
+}
+
+.cover p{
+
+    margin-top:30px;
+    opacity:.9;
+}
+
+.tap{
+
+    margin-top:40px;
+
+    padding:12px 24px;
+
+    border:2px solid white;
+    border-radius:30px;
+
+    animation:pulse 1.8s infinite;
+}
+
+@keyframes pulse{
+
+0%{transform:scale(1);}
+50%{transform:scale(1.08);}
+100%{transform:scale(1);}
+
+}
+
+.inside h1{
+
+    color:#e91e63;
+    text-align:center;
+    margin-bottom:10px;
+}
+
+.subtitle{
+
+    text-align:center;
+    color:#888;
+    margin-bottom:25px;
+}
+
+.message{
+    color:#555;
+    line-height:1.8;
+    font-size: 9.5px;
+    text-align: justify;
+}
+
+.highlight{
+
+    color:#000000;
+    font-weight:bold;
+}
+
+.quote{
+    margin-top:20px;
+    padding:12px;
+    border-radius:15px;
+    background:#fff2f6;
+    color:#666;
+    font-style:italic;
+}
+
+.footer{
+
+    position:absolute;
+    bottom:25px;
+    left:35px;
+    right:35px;
+
+    text-align:right;
+
+    color:#888;
+    font-size: 9.5px;
+}
+
+.hearts{
+
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+}
+
+.heart{
+
+    position:absolute;
+    font-size:24px;
+
+    animation:float 7s linear infinite;
+
+    opacity:.75;
+}
+
+@keyframes float{
+
+from{
+
+transform:translateY(100vh);
+opacity:0;
+
+}
+
+20%{
+
+opacity:1;
+
+}
+
+to{
+
+transform:translateY(-120vh);
+opacity:0;
+
+}
+
+}
+
+@media(max-width:480px){
+
+.card{
+
+width:92vw;
+height:80vh;
+max-height:600px;
+
+}
+
+.cover h1{
+
+font-size:28px;
+
+}
+
+.cover h2{
+
+font-size:18px;
+
+}
+
+.message{
+
+font-size:15px;
+
+}
+
+.inside{
+
+padding:25px;
+
+}
+
+.footer{
+
+left:20px;
+right:20px;
+bottom:18px;
+
+}
+
+}

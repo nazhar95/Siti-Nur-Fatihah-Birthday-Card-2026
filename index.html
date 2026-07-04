@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="styles.css" rel="stylesheet">
+<title>Selamat Hari Lahir Siti Nur Fatihah</title>
+
+</head>
+
+<body>
+
+<div class="hearts">
+
+<div class="heart" style="left:8%;animation-delay:0s;">💖</div>
+<div class="heart" style="left:28%;animation-delay:2s;">🌸</div>
+<div class="heart" style="left:55%;animation-delay:4s;">💐</div>
+<div class="heart" style="left:78%;animation-delay:1s;">✨</div>
+
+</div>
+
+<div class="scene">
+
+<div class="card" id="card">
+
+<div class="inside">
+
+<div class="message">
+
+<span class="highlight">Assalamualaikum awak</span>,
+<br><br>
+Selamat menyambut ulang tahun kelahiran yang ke-32 🎉<br><br>
+Maafkan saya sebab tak dapat ada bersama dengan awak hari ini atas 
+sebab awak sendiri pun tahu apa. Hanya kad online ini sajalah yang saya dapat berikan pada awak sebagai pengganti hadiah dari saya.
+
+<br><br>
+Pada hari yang istimewa ni, saya doakan agar Allah SWT sentiasa melimpahkan rahmat, 
+keberkatan dan kasih sayang-Nya kepada awak. Dan semoga dikurniakan kesihatan yang baik, 
+umur yang diberkati, rezeki yang melimpah, hati yang tenang, serta dipermudahkan segala urusan dunia dan akhirat.
+<br><br>
+
+Teruskan melangkah dengan yakin, kerana setiap kebaikan yang dilakukan pasti mempunyai nilainya di sisi Allah SWT.
+
+<br><br>
+Walau apa pun yang dah berlaku antara kita, saya tetap mendoakan awak sentiasa bahagia, berjaya dalam kerjaya, 
+dan dikurniakan kehidupan yang penuh dengan rahmat serta keberkatan. 
+
+<div class="quote">
+"Terima kasih kerana pernah jadi insan istimewa dan temankan saya dalam hidup saya"
+</div>
+
+</div>
+
+<div class="footer">
+Yang Ikhlas, <br>Naz
+</div>
+
+</div>
+
+<div class="cover">
+
+<div><img src='birthday-cake.png' height="200px" width="200px"></div>
+
+<h1>Selamat Hari Lahir</h1>
+
+<h2>
+
+Siti Nur Fatihah<br>
+Binti Mohamed Zaki
+
+</h2>
+
+<p>
+🎀 Tekan Untuk Buka 🎀
+</p>
+
+<div class="tap">
+
+Buka Kad
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<audio id="birthdayMusic" preload="auto">
+    <source src="happy_birthday.mp3" type="audio/mpeg">
+    Your browser does not support audio.
+</audio>
+
+<script>
+  const card = document.getElementById("card");
+  const music = document.getElementById("birthdayMusic");
+
+  card.addEventListener("click", function () {
+
+      card.classList.toggle("open");
+
+      if(card.classList.contains("open")){
+          music.play();
+      }else{
+          music.pause();
+          music.currentTime = 0;
+      }
+
+  });
+</script>
+</body>
+</html>
