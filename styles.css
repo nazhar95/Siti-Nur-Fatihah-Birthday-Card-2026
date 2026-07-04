@@ -87,6 +87,11 @@ body{
     opacity:.9;
 }
 
+.cake{
+    width:200px;
+    height:200px;
+}
+
 .tap{
 
     margin-top:40px;
