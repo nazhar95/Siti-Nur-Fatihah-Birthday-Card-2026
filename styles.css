@@ -20,8 +20,8 @@ body{
 }
 
 .card{
-    width:min(92vw,360px);
-    height:min(85vh,540px);
+    width:360px;
+    height:540px;
     position:relative;
     transform-style:preserve-3d;
 }
@@ -39,7 +39,6 @@ body{
 .inside{
     background:white;
     padding:35px;
-    overflow-y:auto;
 }
 
 .cover{
@@ -125,7 +124,7 @@ body{
 .message{
     color:#555;
     line-height:1.8;
-    font-size:clamp(14px,2vw,16px);
+    font-size: 9.5px;
     text-align: justify;
 }
 
@@ -145,10 +144,16 @@ body{
 }
 
 .footer{
-    margin-top:30px;
+
+    position:absolute;
+    bottom:25px;
+    left:35px;
+    right:35px;
+
     text-align:right;
+
     color:#888;
-    font-size:14px;
+    font-size: 9.5px;
 }
 
 .hearts{
@@ -231,82 +236,6 @@ padding:25px;
 left:20px;
 right:20px;
 bottom:18px;
-
-}
-
-@media (max-width:600px){
-
-body{
-
-    padding:15px;
-
-}
-
-.card{
-
-    width:100%;
-    max-width:360px;
-    height:85vh;
-
-}
-
-.inside{
-
-    padding:22px;
-    overflow-y:auto;
-
-}
-
-.cover img{
-
-    width:140px;
-    height:140px;
-
-}
-
-.cover h1{
-
-    font-size:24px;
-
-}
-
-.cover h2{
-
-    font-size:18px;
-
-}
-
-.cover p{
-
-    font-size:14px;
-
-}
-
-.tap{
-
-    padding:10px 20px;
-    font-size:14px;
-
-}
-
-.message{
-
-    font-size:15px;
-    line-height:1.65;
-
-}
-
-.quote{
-
-    font-size:14px;
-
-}
-
-.footer{
-
-    font-size:14px;
-
-}
 
 }
 
