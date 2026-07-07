@@ -19,7 +19,25 @@
 
 </div>
 
-<div class="scene">
+<div id="giftContainer">
+
+    <div id="countdown"></div>
+
+    <div id="giftBox">
+        <div class="lid"></div>
+        <div class="box"></div>
+        <div class="ribbon-v"></div>
+        <div class="ribbon-h"></div>
+
+        <div class="giftText">
+            Hadiah akan terbuka pada<br>
+            <b>24 Julai 2026</b>
+        </div>
+    </div>
+
+</div>
+
+<div class="scene" id="cardScene" style="display:none;">
 
 <div class="card" id="card">
 
@@ -61,16 +79,16 @@ Yang Ikhlas, <br>Naz
 
 <div><img src='birthday-cake.png' width="200px" height="200px"></div>
 
-<h1>Selamat Hari Lahir</h1>
+<h1 style="color:#000000">Selamat Hari Lahir</h1>
 
 <h2>
 
-Siti Nur Fatihah<br>
-Binti Mohamed Zaki
+<strong>Siti Nur Fatihah<br>
+Binti Mohamed Zaki</strong>
 
 </h2>
 
-<p>
+<p style="color:#000000">
 🎀 Tekan Untuk Buka 🎀
 </p>
 
@@ -91,21 +109,87 @@ Buka Kad
 </audio>
 
 <script>
-  const card = document.getElementById("card");
-  const music = document.getElementById("birthdayMusic");
 
-  card.addEventListener("click", function () {
+const releaseDate = new Date("2026-07-07T20:48:00");
 
-      card.classList.toggle("open");
+const countdown = document.getElementById("countdown");
+const giftBox = document.getElementById("giftBox");
+const giftContainer = document.getElementById("giftContainer");
+const cardScene = document.getElementById("cardScene");
 
-      if(card.classList.contains("open")){
-          music.play();
-      }else{
-          music.pause();
-          music.currentTime = 0;
-      }
+const card = document.getElementById("card");
+const music = document.getElementById("birthdayMusic");
 
-  });
+function updateCountdown(){
+
+    const now = new Date();
+
+    const diff = releaseDate - now;
+
+    if(diff <= 0){
+
+        clearInterval(timer);
+
+        countdown.innerHTML="🎉 Selamat Hari Lahir! 🎉";
+
+        giftBox.classList.add("open");
+
+        setTimeout(function(){
+
+            giftContainer.style.display="none";
+            cardScene.style.display="block";
+
+        },1500);
+
+        return;
+    }
+
+    const days=Math.floor(diff/(1000*60*60*24));
+
+    const hours=Math.floor((diff%(1000*60*60*24))/(1000*60*60));
+
+    const minutes=Math.floor((diff%(1000*60*60))/(1000*60));
+
+    const seconds=Math.floor((diff%(1000*60))/1000);
+
+    countdown.innerHTML=
+        days+" Hari "+
+        hours+" Jam "+
+        minutes+" Minit "+
+        seconds+" Saat";
+
+}
+
+const timer=setInterval(updateCountdown,1000);
+
+updateCountdown();
+
+card.addEventListener("click", function () {
+
+    const isOpen = card.classList.toggle("open");
+
+    if (isOpen) {
+
+        const playPromise = music.play();
+
+        if (playPromise !== undefined) {
+            playPromise.catch(function (err) {
+                console.log("Audio could not play:", err);
+            });
+        }
+
+    } else {
+
+        if (!music.paused) {
+            music.pause();
+        }
+
+        music.currentTime = 0;
+
+    }
+
+});
+
 </script>
 </body>
 </html>
